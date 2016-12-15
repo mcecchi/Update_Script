@@ -2,7 +2,6 @@
 HOME_DIR="/home/pi"
 VENV="oprint"
 OCTO_DIR=$HOME_DIR/OctoPrint
-THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 USER_PI="sudo -u pi"
 
 ######octoprint plugins #######
@@ -18,9 +17,6 @@ install_plugin "https://github.com/Robo3D/OctoPrint-EEPROM-Marlin/archive/master
 
 #Firmware Updater - Robo Controlled
 install_plugin "https://github.com/Robo3D/OctoPrint-FirmwareUpdater/archive/master.zip"
-
-#AVRDude
-apt-get install -y avrdude
 
 #persistent Mainboard connection
 install_plugin "https://github.com/Robo3D/OctoPrint-MainboardConnection/archive/master.zip"
@@ -52,3 +48,7 @@ install_plugin "https://github.com/mikerybka/OctoPrint-Lani/archive/master.zip"
 #Alexa
 install_plugin "https://github.com/Robo3D/Octoprint_Alexa/archive/master.zip"
 
+
+#store that the update has occured
+echo ${0##*/} >> /home/pi/.updates.txt
+echo "Update Complete!"
