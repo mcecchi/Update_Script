@@ -16,3 +16,4 @@ flash_arduino Marlin.ino.hex
 #complete the update
 echo ${0##*/} >> /home/pi/.updates.txt
 echo "Update Complete!"
+exit 0

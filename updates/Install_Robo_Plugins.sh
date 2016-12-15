@@ -52,3 +52,4 @@ install_plugin "https://github.com/Robo3D/Octoprint_Alexa/archive/master.zip"
 #store that the update has occured
 echo ${0##*/} >> /home/pi/.updates.txt
 echo "Update Complete!"
+exit 0
