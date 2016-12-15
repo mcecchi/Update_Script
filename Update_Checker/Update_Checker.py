@@ -58,15 +58,25 @@ class Update_Checker():
         
 
     def execute_updates(self):
-        print("These need updating:")
-        for update in self.needed_updates:
-            print("\t" + update)
+        if len(self.needed_updates) != 0:
+            #turn off octoprint and bring up error screen
+            subprocess.call("sudo sh " + self.current_path + "/../octoprint_takeover.sh", shell=True)
 
-        
-        for update in self.needed_updates:
-            print("Executing " + update)
-            subprocess.call(["sudo sh "+ self.updates_path + update], shell=True)
-        
+            #update all pending updates
+            print("These need updating:")
+            for update in self.needed_updates:
+                print("\t" + update)
+    
+            
+            for update in self.needed_updates:
+                print("Executing " + update)
+                subprocess.call(["sudo sh "+ self.updates_path + update], shell=True)
+
+            #restart the machine
+            subprocess.call("sudo reboot", shell=True)
+            exit(0)
+        else:
+            exit(0)
 
 
 

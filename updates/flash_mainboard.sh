@@ -11,7 +11,7 @@ flash_arduino () {
 apt-get install -y avrdude
 #flash the board
 cd $THIS_DIR/../assets
-flash_arduino $ASSETS_DIR/Marlin.ino.hex
+flash_arduino Marlin.ino.hex
 
 #complete the update
 echo ${0##*/} >> /home/pi/.updates.txt

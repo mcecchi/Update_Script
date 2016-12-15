@@ -15,12 +15,11 @@ kill_octoprint () {
 python_run () {
     $USER_PI $HOME_DIR/$VENV/bin/python $1
 }
+#------------------------------ Main Update----------------------------------
+#stop octo print
+kill_octoprint
 
-#do the update
-python_run $THIS_DIR/Update_Checker/Update_Checker.py
+#pull up a warning screen
+python_run $THIS_DIR/Kivy_Popup_Updater/main.py & 
 
-
-
-
-#exit
 exit 0
