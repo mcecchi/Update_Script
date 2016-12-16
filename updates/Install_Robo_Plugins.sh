@@ -48,6 +48,9 @@ install_plugin "https://github.com/mikerybka/OctoPrint-Lani/archive/master.zip"
 #Alexa
 install_plugin "https://github.com/Robo3D/Octoprint_Alexa/archive/master.zip"
 
+#RoboLCD
+install_plugin "https://github.com/victorevector/RoboLCD/archive/master.zip"
+
 
 #store that the update has occured
 echo ${0##*/} >> /home/pi/.updates.txt
