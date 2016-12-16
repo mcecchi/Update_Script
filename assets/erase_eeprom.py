@@ -10,8 +10,8 @@ class Erase_eeprom():
         with serial.Serial() as self.ser:
             self.ser.baudrate = 250000
             self.ser.port = ('/dev/ttyACM0')  # open serial port
-            ser.open()
-        
+            self.ser.open()
+
         print(self.ser.name)
 
     def erase_eeprom(self):
