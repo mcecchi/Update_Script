@@ -73,9 +73,11 @@ class Update_Checker():
                 subprocess.call(["sudo bash "+ self.updates_path + update], shell=True)
 
             #restart the machine
+            subprocess.call("sudo bash " + self.current_path + "/../delete_me.sh", shell=True)
             subprocess.call("sudo reboot", shell=True)
             exit(0)
         else:
+            subprocess.call("sudo bash " + self.current_path + "/../delete_me.sh", shell=True)
             exit(0)
 
 
