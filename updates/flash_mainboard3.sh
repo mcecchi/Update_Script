@@ -27,9 +27,9 @@ sudo pip  install pyserial
 apt-get install -y avrdude
 #flash the board
 cd $THIS_DIR/../assets
-sudo python erase_eeprom.py
-wait 10
 flash_arduino Marlin.ino.mega.hex
+sudo python erase_eeprom.py
+
 
 #complete the update
 echo ${0##*/} >> /home/pi/.updates.txt
