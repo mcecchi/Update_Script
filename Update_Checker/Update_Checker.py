@@ -30,7 +30,7 @@ class Update_Checker():
         self.current_updates_filename = "/home/pi/.updates.txt"
         if not os.path.isfile(self.current_updates_filename):
             create_file = open(self.current_updates_filename, 'w+')
-        
+
         print("Completed Updated Path: " + self.current_updates_filename)
 
         #put all logged filenames into a list
@@ -55,34 +55,32 @@ class Update_Checker():
                 self.needed_updates.append(update)
                 print("\t" + update + ": Needs Updating")
 
-        
+
 
     def execute_updates(self):
         if len(self.needed_updates) != 0:
             #turn off octoprint and bring up error screen
-            subprocess.call("sudo sh " + self.current_path + "/../octoprint_takeover.sh", shell=True)
+            subprocess.call("sudo bash " + self.current_path + "/../octoprint_takeover.sh", shell=True)
 
             #update all pending updates
             print("These need updating:")
             for update in self.needed_updates:
                 print("\t" + update)
-    
-            
+
+
             for update in self.needed_updates:
                 print("Executing " + update)
-                subprocess.call(["sudo sh "+ self.updates_path + update], shell=True)
+                subprocess.call(["sudo bash "+ self.updates_path + update], shell=True)
 
             #restart the machine
+            subprocess.call("sudo bash " + self.current_path + "/../delete_me.sh", shell=True)
             subprocess.call("sudo reboot", shell=True)
             exit(0)
         else:
+            subprocess.call("sudo bash " + self.current_path + "/../delete_me.sh", shell=True)
             exit(0)
 
 
 
 
 uc = Update_Checker()
-
-
-        
-        
