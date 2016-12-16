@@ -20,6 +20,7 @@ flash_arduino () {
 }
 
 # #get pyserial
+sudo service octoprint stop
 sudo pip  install pyserial
 
 # #AVRDude
