@@ -2,7 +2,7 @@
 THIS_DIR=`dirname $0`
 
 echo "Installing!"
-cd $THIS_DIR/../assets/USB_Cleaner_Octoprint
+cd $THIS_DIR/../assets/USB_Cleaner
 
 mkdir /usr/local/src/USB_Cleaner
 
