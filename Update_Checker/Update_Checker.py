@@ -82,5 +82,5 @@ class Update_Checker():
 
 
 
-
-uc = Update_Checker()
+if __name__ == '__main__':
+    Update_Checker()
