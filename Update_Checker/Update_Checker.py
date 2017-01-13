@@ -12,7 +12,7 @@ class Update_Checker():
     def __init__(self, versioning_path=None):
         logging.basicConfig(filename='/home/pi/update_script.log', level=logging.DEBUG)
         logging.info('Update_Checker imported')
-        
+
         self.version = '1.0.4'
         self.current_path = os.path.dirname(os.path.realpath(__file__))
         print("Current Directory is: " + self.current_path)
@@ -70,7 +70,7 @@ class Update_Checker():
                 self.needed_updates.append(update)
                 print("\t" + update + ": Needs Updating")
 
-        logging.info("Update(s) available: {}".format(self.needed_updates))
+        logging.info("Desires an update: {}".format(self.needed_updates))
 
     def execute_updates(self):
         if len(self.needed_updates) != 0:
@@ -91,7 +91,7 @@ class Update_Checker():
 
             self.update_version()
             #restart the machine
-            # subprocess.call("sudo reboot", shell=True)
+            subprocess.call("sudo reboot", shell=True)
             exit(0)
         else:
             self.update_version()
