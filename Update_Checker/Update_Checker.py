@@ -89,9 +89,13 @@ class Update_Checker():
                 subprocess.call(["sudo bash "+ self.updates_path + update], shell=True)
                 logging.info("Complete... package: {}".format(update))
 
+            logging.info("Updating Version...")
             self.update_version()
+            logging.info("...Complete.")
             #restart the machine
+            logging.info("Rebooting system...")
             subprocess.call("sudo reboot", shell=True)
+            logging.info("Exiting....")
             exit(0)
         else:
             self.update_version()
