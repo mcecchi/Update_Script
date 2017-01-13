@@ -82,7 +82,7 @@ class Update_Checker():
 
             self.update_version()
             #restart the machine
-            subprocess.call("sudo reboot", shell=True)
+            # subprocess.call("sudo reboot", shell=True)
             exit(0)
         else:
             self.update_version()
