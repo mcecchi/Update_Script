@@ -4,6 +4,10 @@ import os.path
 import string
 import subprocess
 import yaml
+import logging
+
+logging.basicConfig(filename='/home/pi/update_script.log', level=logging.DEBUG)
+logging.info('Update_Checker imported')
 
 class Update_Checker():
     """docstring for Update_Checker"""
@@ -33,6 +37,7 @@ class Update_Checker():
         print("Files inside of /updates/ : ")
         for file in self.update_filenames:
             print("\t" + file)
+        logging.info("Available Updates: {}".format(self.update_filenames))
 
     def check_completed_updates(self):
         #get the filename of the logged updates
@@ -64,6 +69,7 @@ class Update_Checker():
                 self.needed_updates.append(update)
                 print("\t" + update + ": Needs Updating")
 
+        logging.info("Update(s) available: {}".format(self.needed_updates))
 
     def execute_updates(self):
         if len(self.needed_updates) != 0:
@@ -78,7 +84,9 @@ class Update_Checker():
 
             for update in self.needed_updates:
                 print("Executing " + update)
+                logging.info("Start... package: {}".format(update))
                 subprocess.call(["sudo bash "+ self.updates_path + update], shell=True)
+                logging.info("Complete... package: {}".format(update))
 
             self.update_version()
             #restart the machine
