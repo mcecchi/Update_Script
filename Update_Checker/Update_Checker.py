@@ -3,16 +3,25 @@ from os import walk
 import os.path
 import string
 import subprocess
+import yaml
 
 class Update_Checker():
     """docstring for Update_Checker"""
-    def __init__(self):
+    def __init__(self, versioning_path=None):
+        self.version = '1.0.4'
         self.current_path = os.path.dirname(os.path.realpath(__file__))
         print("Current Directory is: " + self.current_path)
+        self.versioning_path = versioning_path
         self.check_updates()
         self.check_completed_updates()
         self.execute_updates()
 
+    def update_version(self):
+        if self.versioning_path:
+            with open(self.versioning_path, 'w') as f:
+                f.write(self.version)
+        else:
+            pass 
 
     def check_updates(self):
         self.updates_path = self.current_path + "/../updates/"
@@ -56,7 +65,6 @@ class Update_Checker():
                 print("\t" + update + ": Needs Updating")
 
 
-
     def execute_updates(self):
         if len(self.needed_updates) != 0:
             #turn off octoprint and bring up error screen
@@ -73,11 +81,9 @@ class Update_Checker():
                 subprocess.call(["sudo bash "+ self.updates_path + update], shell=True)
 
             #restart the machine
-            #subprocess.call("sudo bash " + self.current_path + "/../delete_me.sh", shell=True)
             subprocess.call("sudo reboot", shell=True)
             exit(0)
         else:
-            #subprocess.call("sudo bash " + self.current_path + "/../delete_me.sh", shell=True)
             exit(0)
 
 
