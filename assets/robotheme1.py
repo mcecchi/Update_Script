@@ -14,8 +14,11 @@ def write_to_file(config, path):
 def main():
     path = '/home/pi/.octoprint/config.yaml'
     config = get_config(path)
-    del config['plugins']['softwareupdate']['checks']['robotheme']
-    write_to_file(config, path)
+    if 'robotheme' in config['plugins']['softwareupdate']['checks']:
+        del config['plugins']['softwareupdate']['checks']['robotheme']
+        write_to_file(config, path)
+    else:
+        pass
     quit()
 
 if __name__ == '__main__':
