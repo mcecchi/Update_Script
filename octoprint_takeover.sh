@@ -17,9 +17,9 @@ python_run () {
 }
 #------------------------------ Main Update----------------------------------
 #stop octo print
-kill_octoprint
+kill_octoprint &
 
 #pull up a warning screen
-python_run $THIS_DIR/Kivy_Popup_Updater/main.py & 
+python_run $THIS_DIR/Kivy_Popup_Updater/main.py &
 
 exit 0
