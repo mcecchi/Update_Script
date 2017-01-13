@@ -21,7 +21,7 @@ class Update_Checker():
             with open(self.versioning_path, 'w') as f:
                 f.write(self.version)
         else:
-            pass 
+            pass
 
     def check_updates(self):
         self.updates_path = self.current_path + "/../updates/"
@@ -80,10 +80,12 @@ class Update_Checker():
                 print("Executing " + update)
                 subprocess.call(["sudo bash "+ self.updates_path + update], shell=True)
 
+            self.update_version()
             #restart the machine
             subprocess.call("sudo reboot", shell=True)
             exit(0)
         else:
+            self.update_version()
             exit(0)
 
 
