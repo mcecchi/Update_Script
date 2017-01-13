@@ -6,12 +6,13 @@ import subprocess
 import yaml
 import logging
 
-logging.basicConfig(filename='/home/pi/update_script.log', level=logging.DEBUG)
-logging.info('Update_Checker imported')
 
 class Update_Checker():
     """docstring for Update_Checker"""
     def __init__(self, versioning_path=None):
+        logging.basicConfig(filename='/home/pi/update_script.log', level=logging.DEBUG)
+        logging.info('Update_Checker imported')
+        
         self.version = '1.0.4'
         self.current_path = os.path.dirname(os.path.realpath(__file__))
         print("Current Directory is: " + self.current_path)
