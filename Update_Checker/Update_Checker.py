@@ -24,6 +24,7 @@ class Update_Checker():
             pipe.send(True)
         else:
             pipe.send(False)
+        pipe.close()
         self.execute_updates()
 
     def update_version(self):
