@@ -21,12 +21,12 @@ class Update_Checker():
         self.check_completed_updates()
         # report back to caller
         output_p, input_p = pipe
-        input_p.close()
-        if len(self.needed_updates) > 0:
-            output_p.send(True)
-        else:
-            output_p.send(False)
         output_p.close()
+        if len(self.needed_updates) > 0:
+            input_p.send(True)
+        else:
+            input_p.send(False)
+        input_p.close()
         self.execute_updates()
 
     def update_version(self):
