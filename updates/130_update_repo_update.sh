@@ -10,10 +10,9 @@ install_plugin () {
 }
 
 #Install the new RoboLCD Version
-install_plugin "https://robo3dtest:r0b0r0b0@github.com/Robo3d/RoboLCD/archive/master.zip"
+# install_plugin "https://robo3dtest:r0b0r0b0@github.com/Robo3d/RoboLCD/archive/master.zip"
 
 #complete the update
 echo ${0##*/} >> /home/pi/.updates.txt
 echo "Update Complete!"
 exit 0
-
