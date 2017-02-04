@@ -9,7 +9,7 @@ import logging
 
 class Update_Checker():
     """docstring for Update_Checker"""
-    def __init__(self, pipe=None, versioning_path=None):
+    def __init__(self, versioning_path=None, pipe=None):
         logging.basicConfig(filename='/home/pi/update_script.log', level=logging.DEBUG)
         logging.info('Update_Checker imported')
 
