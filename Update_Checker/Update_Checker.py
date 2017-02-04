@@ -9,7 +9,7 @@ import logging
 
 class Update_Checker():
     """docstring for Update_Checker"""
-    def __init__(self, versioning_path=None):
+    def __init__(self, pipe, versioning_path=None):
         logging.basicConfig(filename='/home/pi/update_script.log', level=logging.DEBUG)
         logging.info('Update_Checker imported')
 
@@ -19,6 +19,14 @@ class Update_Checker():
         self.versioning_path = versioning_path
         self.check_updates()
         self.check_completed_updates()
+        # report back to caller
+        output_p, input_p = pipe
+        output_p.close()
+        if len(self.needed_updates) > 0:
+            input_p.send(True)
+        else:
+            input_p.send(False)
+        input_p.close()
         self.execute_updates()
 
     def update_version(self):
