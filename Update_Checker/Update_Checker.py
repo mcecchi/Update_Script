@@ -50,9 +50,9 @@ class Update_Checker():
         elif p_type is str:
             versioning_path = p
 
-        if v_type is tuple or v_type is None:
+        if v_type is tuple or v is None:
             pipe = v
-        elif p_type is tuple or p_type is None:
+        elif p_type is tuple or p is None:
             pipe = p
 
         return versioning_path, pipe
