@@ -9,7 +9,7 @@ import logging
 
 class Update_Checker():
     """docstring for Update_Checker"""
-    def __init__(self, versioning_path=None, pipe=None):
+    def __init__(self, versioning_path, pipe=None):
         logging.basicConfig(filename='/home/pi/update_script.log', level=logging.DEBUG)
         logging.info('Update_Checker imported')
 
@@ -42,8 +42,18 @@ class Update_Checker():
             RoboLCD 1.3.0 passes the pipe arg before versioning_path, while 1.2.3 only passes the verisioning_path. This causes Update_Checker to be incompatible with both 1.2.3 and 1.3.0.
 
         """
-        versioning_path = v if type(v) is str else p
-        pipe = p if type(p) is tuple else v
+        v_type = type(v)
+        p_type = type(p)
+
+        if v_type is str:
+            versioning_path = v
+        elif p_type is str:
+            versioning_path = p
+
+        if v_type is tuple or v_type is None:
+            pipe = v
+        elif p_type is tuple or p_type is None:
+            pipe = p
 
         return versioning_path, pipe
 
