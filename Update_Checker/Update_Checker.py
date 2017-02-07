@@ -9,25 +9,43 @@ import logging
 
 class Update_Checker():
     """docstring for Update_Checker"""
-    def __init__(self, pipe, versioning_path=None):
+    def __init__(self, versioning_path=None, pipe=None):
         logging.basicConfig(filename='/home/pi/update_script.log', level=logging.DEBUG)
         logging.info('Update_Checker imported')
 
-        self.version = '1.0.4'
+        self.version = '1.1.0'
         self.current_path = os.path.dirname(os.path.realpath(__file__))
         print("Current Directory is: " + self.current_path)
-        self.versioning_path = versioning_path
+
+        self.versioning_path, pipe = self.sort_args(versioning_path, pipe)
+
         self.check_updates()
         self.check_completed_updates()
-        # report back to caller
-        output_p, input_p = pipe
-        output_p.close()
-        if len(self.needed_updates) > 0:
-            input_p.send(True)
-        else:
-            input_p.send(False)
-        input_p.close()
+        # report update status to caller
+        if pipe:
+            output_p, input_p = pipe
+            output_p.close()
+            if len(self.needed_updates) > 0:
+                input_p.send(True)
+            else:
+                input_p.send(False)
+            input_p.close()
         self.execute_updates()
+
+    def sort_args(self, v, p):
+        """
+        manually screen args and correct misnomers.
+        return (versioning_path, pipe)
+
+        fix for bug introduced in RoboLCD 1.3.0.
+        __History__
+            RoboLCD 1.3.0 passes the pipe arg before versioning_path, while 1.2.3 only passes the verisioning_path. This causes Update_Checker to be incompatible with both 1.2.3 and 1.3.0.
+
+        """
+        versioning_path = v if type(v) is str else p
+        pipe = p if type(p) is tuple else v
+
+        return versioning_path, pipe
 
     def update_version(self):
         if self.versioning_path:
