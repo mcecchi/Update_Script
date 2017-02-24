@@ -1,7 +1,6 @@
 #!/bin/bash
 THIS_DIR=`dirname $0`
 
-#!/bin/bash
 HOME_DIR="/home/pi"
 VENV="oprint"
 OCTO_DIR=$HOME_DIR/OctoPrint
