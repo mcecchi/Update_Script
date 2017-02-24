@@ -1,0 +1,8 @@
+{% snippet 'disable_hotends' %}
+M104 S0
+M106 S0
+G91
+G1 Z10 F500
+G28 X0 Y0
+G1 Z140 F500
+M84
