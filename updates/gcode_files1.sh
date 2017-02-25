@@ -10,8 +10,8 @@ rm $UPLOADS/robo_keychain.gcode
 rm $UPLOADS/smartphone_and_tablet_stand.gcode
 rm $UPLOADS/wavy_vase.gcode
 rm $UPLOADS/Whistle_V29D.gcode
-rm $UPLOADS/TEST(skirt_no_raft).gcode
-rm $UPLOADS/TEST(with_raft).gcode
+rm $UPLOADS/"TEST(skirt_no_raft).gcode"
+rm $UPLOADS/"TEST(with_raft).gcode"
 
 echo "adding new gcode files"
 
