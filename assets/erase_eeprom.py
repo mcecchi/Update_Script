@@ -2,9 +2,6 @@ import serial
 import time
 class Erase_eeprom():
 
-    def __init__(self):
-        self.setup_serial()
-
     def setup_serial(self):
         with serial.Serial() as self.ser:
             time.sleep(5)
@@ -27,23 +24,23 @@ class Erase_eeprom():
             print("Writing M105")
             val = "M105\n"
             written = self.ser.write(val)
-            print(written)  
+            print(written)
 
             print(self.ser.readline()) #wait for the ok command
-            
+
             print("Writing M502")
             val = "M502\n"
             written = self.ser.write(val)
-            print(written)  
-            
+            print(written)
+
             print(self.ser.readline()) # wait for the confirmation
             print(self.ser.readline()) # wait for the ok command
 
             print("Writing M500")
             val = "M500\n"
             written = self.ser.write(val)
-            print(written)  
-            
+            print(written)
+
             print(self.ser.readline()) # wait for the confirmation
             print(self.ser.readline()) # wait for the ok command
 
@@ -51,8 +48,10 @@ class Erase_eeprom():
             print("Closing Connection")
             self.ser.close()
             print("Connection Closed")
-  
-           
 
 
-ee = Erase_eeprom()
+
+if __name__ == '__main__':
+    ee = Erase_eeprom()
+    ee.setup_serial()
+    exit()
