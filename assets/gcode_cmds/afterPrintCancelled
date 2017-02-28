@@ -1,5 +1,4 @@
 M410
-{% snippet 'disable_hotends' %}
 M104 S0
 M106 S0
 G91
