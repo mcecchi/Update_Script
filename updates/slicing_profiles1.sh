@@ -6,13 +6,13 @@ SLICING_DIR='/home/pi/.octoprint/slicingProfiles/cura'
 rm $SLICING_DIR/fast_pla.profile
 rm $SLICING_DIR/high_quality.profile
 rm $SLICING_DIR/lowpla.profile
-rm $SLICING_DIR/low_quality_(raft).profile
+rm $SLICING_DIR/"low_quality_(raft).profile"
 rm $SLICING_DIR/normal_quality.profile
 rm $SLICING_DIR/highpla.profile
-rm $SLICING_DIR/high_quality_(raft).profile
+rm $SLICING_DIR/"high_quality_(raft).profile"
 rm $SLICING_DIR/low_quality.profile
 rm $SLICING_DIR/midpla.profile
-rm $SLICING_DIR/normal_quality_(raft).profile
+rm $SLICING_DIR/"normal_quality_(raft).profile"
 
 $USER_PI cp -a $THIS_DIR/../assets/slicing_profiles_c2/. $SLICING_DIR
 
