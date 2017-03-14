@@ -1,3 +1,6 @@
+; set to relative mode
 G91
-G1 Z30
+; move bed down 10mm
+G1 Z10
+; set back to absolute mode
 G90
