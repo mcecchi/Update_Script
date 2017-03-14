@@ -1,7 +1,12 @@
+; turn off heaters
 M104 S0
-M106 S0
-G91
-G1 Z10 F500
-G28 X0 Y0
-G1 Z140 F500
+; turn off fans
+M107
+; home all axis
+G28
+; set absolute mode
+G90
+; zero extruder
+G1 E0
+; turn off motors
 M84
