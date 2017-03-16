@@ -12,7 +12,7 @@ install_plugin () {
 }
 
 #Install the new RoboLCD Version
-install_plugin "https://robo3dtest:r0b0r0b0@github.com/Robo3D/RoboLCD/archive/zoffset_update.zip"
+install_plugin "https://github.com/victorevector/RoboLCD/archive/1.4.0.zip"
 install_plugin "https://github.com/Robo3D/OctoPrint-FirmwareUpdater/archive/0.2.0.zip"
 
 #complete the update
