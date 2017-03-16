@@ -10,7 +10,7 @@ G28
 ; set to absolute mode
 G90 
 ; zero extruder
-G1 E0
+G92 E0
 ; disable motors
 M84
 
