@@ -12,8 +12,7 @@ install_plugin () {
 }
 
 #Install the new RoboLCD Version
-cd $THIS_DIR/../assets
-install_plugin "RoboLCD-master.zip"
+install_plugin "https://github.com/victorevector/RoboLCD/archive/1.4.0.zip"
 
 #complete the update
 echo ${0##*/} >> /home/pi/.updates.txt
