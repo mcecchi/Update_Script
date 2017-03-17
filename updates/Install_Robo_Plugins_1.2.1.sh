@@ -16,7 +16,7 @@ install_plugin "https://github.com/Robo3D/octoprint-customControl/archive/0.2.7.
 install_plugin "https://github.com/Robo3D/OctoPrint-EEPROM-Marlin/archive/0.1.5.zip"
 
 #Firmware Updater - Robo Controlled
-install_plugin "https://github.com/Robo3D/OctoPrint-FirmwareUpdater/archive/0.1.4.zip"
+install_plugin "https://github.com/Robo3D/OctoPrint-FirmwareUpdater/archive/0.2.0.zip"
 
 #persistent Mainboard connection
 # install_plugin "https://github.com/Robo3D/OctoPrint-MainboardConnection/archive/master.zip"
@@ -49,7 +49,7 @@ install_plugin "https://github.com/Robo3D/Kaa_Printevent/archive/0.1.0.zip"
 install_plugin "https://github.com/Robo3D/Octoprint_Alexa/archive/0.1.3.zip"
 
 #RoboLCD
-install_plugin "https://github.com/victorevector/RoboLCD/archive/1.3.0.zip"
+install_plugin "https://github.com/victorevector/RoboLCD/archive/1.4.1.zip"
 
 
 #store that the update has occured
