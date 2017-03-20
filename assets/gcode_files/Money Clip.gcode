@@ -126625,16 +126625,16 @@ M104 S0
 ;SETTING_3 \nretraction_enable = True\\nraft_base_speed = 10.0\\nskirt_brim_mini
 ;SETTING_3 mal_length = 100\\nline_width = 0.4\\nspeed_wall = 30.0\\nraft_base_l
 ;SETTING_3 ine_width = 1\\ninfill_before_walls = True\\nspeed_support = 100\\nwa
-;SETTING_3 ll_thickness = 1.2\\nretraction_hop_enabled = True\\ncool_fan_full_la
-;SETTING_3 yer = 4\\nraft_interface_speed = 40.0\\njerk_enabled = False\\nretrac
-;SETTING_3 tion_min_travel = 5\\nraft_base_line_spacing = 3\\nspeed_travel_layer
-;SETTING_3 _0 = 30.0\\nraft_interface_line_width = 0.6\\nmaterial_flow = 100\\ns
-;SETTING_3 peed_wall_x = 50.0\\nsupport_type = buildplate\\ninfill_pattern = gri
-;SETTING_3 d\\nouter_inset_first = False\\nspeed_travel = 100\\ntop_bottom_thick
-;SETTING_3 ness = 1.2\\nraft_base_thickness = 0.3\\nraft_speed = 50.0\\nmaterial
-;SETTING_3 _bed_temperature = 0\\nspeed_layer_0 = 10\\nadhesion_type = raft\\nsp
-;SETTING_3 eed_wall_0 = =speed_wall\\nmagic_spiralize = False\\ninfill_sparse_de
-;SETTING_3 nsity = 20\\nspeed_topbottom = 50.0\\nretraction_hop = 0.075\\nraft_m
-;SETTING_3 argin = 5\\nspeed_print = 50\\nraft_airgap = 0.2\\nlayer_height_0 = 0
-;SETTING_3 .3\\nretraction_amount = 1\\nsupport_enable = False\\nspeed_infill = 
-;SETTING_3 =speed_print\\n\\n"}
+;SETTING_3 ll_thickness = 1.2\\nsupport_use_towers = False\\nretraction_hop_enab
+;SETTING_3 led = True\\ncool_fan_full_layer = 4\\nraft_interface_speed = 40.0\\n
+;SETTING_3 jerk_enabled = False\\nretraction_min_travel = 5\\nraft_base_line_spa
+;SETTING_3 cing = 3\\nspeed_travel_layer_0 = 30.0\\nraft_interface_line_width = 
+;SETTING_3 0.6\\nmaterial_flow = 100\\nspeed_wall_x = 50.0\\nsupport_type = buil
+;SETTING_3 dplate\\ninfill_pattern = grid\\nouter_inset_first = False\\nspeed_tr
+;SETTING_3 avel = 100\\ntop_bottom_thickness = 1.2\\nraft_base_thickness = 0.3\\
+;SETTING_3 nraft_speed = 50.0\\nmaterial_bed_temperature = 0\\nspeed_layer_0 = 1
+;SETTING_3 0\\nadhesion_type = raft\\nspeed_wall_0 = =speed_wall\\nmagic_spirali
+;SETTING_3 ze = False\\ninfill_sparse_density = 20\\nspeed_topbottom = 50.0\\nre
+;SETTING_3 traction_hop = 0.075\\nraft_margin = 5\\nspeed_print = 50\\nraft_airg
+;SETTING_3 ap = 0.2\\nlayer_height_0 = 0.3\\nretraction_amount = 1\\nsupport_ena
+;SETTING_3 ble = False\\nspeed_infill = =speed_print\\n\\n"}
