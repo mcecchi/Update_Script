@@ -22,6 +22,8 @@ M109 S210
 G1 Z0.3
 ; print 100mm priming line
 G1 X120 E15.0 F500
+; move bed down 15mm
+G1 Z15
 ; zero extruder
 G92 E0
 ; set movement speed
