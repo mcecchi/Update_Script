@@ -14,7 +14,7 @@ def write_to_file(config, path):
 def main():
     path = '/home/pi/.octoprint/config.yaml'
     config = get_config(path)
-    if 'robotheme' in config['serial']['baudrate']:
+    if 'baudrate' in config['serial']:
         config['serial']['baudrate'] = 115200
         write_to_file(config, path)
     else:

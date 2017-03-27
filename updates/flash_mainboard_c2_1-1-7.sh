@@ -29,7 +29,7 @@ cd $THIS_DIR/../assets
 flash_arduino Marlin.C2.1.1.7.hex
 
 #Ensure baudrate == 115200 in config.yaml
-$USER_PI $HOME_DIR/$VENV/bin/python replace_oprint_config.py
+$USER_PI $HOME_DIR/$VENV/bin/python replace_baudrate.py
 
 
 #complete the update
