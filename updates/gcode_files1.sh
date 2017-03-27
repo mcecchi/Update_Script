@@ -15,7 +15,7 @@ rm $UPLOADS/"TEST(with_raft).gcode"
 
 echo "adding new gcode files"
 
-$USER_PI cp -a $THIS_DIR/../assets/gcode_files/. $UPLOADS/
+$USER_PI cp $THIS_DIR/../assets/gcode_files/* $UPLOADS/
 
 #store that the update has occured
 echo ${0##*/} >> /home/pi/.updates.txt
