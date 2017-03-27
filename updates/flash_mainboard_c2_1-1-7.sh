@@ -20,14 +20,16 @@ flash_arduino () {
 
 # #get pyserial
 sudo service octoprint stop
-sudo pip  install pyserial
+sudo pip install pyserial
 
 # #AVRDude
 apt-get install -y avrdude
 #flash the board
 cd $THIS_DIR/../assets
 flash_arduino Marlin.C2.1.1.7.hex
-sudo python erase_eeprom.py
+
+#Ensure baudrate == 115200 in config.yaml
+$USER_PI $HOME_DIR/$VENV/bin/python replace_oprint_config.py
 
 
 #complete the update
