@@ -2,7 +2,7 @@
 
 """
 installs a package only if package exists
-:params: pkg_name(str)
+:params: pkg_name(str), pkg_url(str)
 :returns: exit code
 """
 
@@ -18,6 +18,7 @@ def install_pkg(pkg):
 
 if __name__ == '__main__':
     pkg = sys.argv[1]
+    url = sys.argv[2]
     if pkg_in_venv(pkg):
-        install_pkg(pkg)
+        install_pkg(url)
     sys.exit(0)
