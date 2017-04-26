@@ -33,9 +33,6 @@ install_plugin "https://github.com/Robo3D/OctoPrint-Stats/archive/1.0.1.zip"
 #Request Spinner
 install_plugin "https://github.com/Robo3D/OctoPrint-RequestSpinner/archive/0.1.2.zip"
 
-#ScreenSquish
-install_plugin "https://github.com/Robo3D/OctoPrint-ScreenSquish/archive/0.1.zip"
-
 #kaa print event
 install_plugin "https://github.com/Robo3D/Kaa_Printevent/archive/0.1.0.zip"
 
