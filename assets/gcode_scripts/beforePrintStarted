@@ -6,6 +6,8 @@ G90
 G92 E0
 ; turn off fans
 M107
+;non blocking heatup of extruder
+M104 S210
 ; home all axis
 G28
 ; probe for bed autolevel plane
@@ -20,10 +22,10 @@ G1 X1 Y1 F7200
 M109 S210
 ; move bed to printing position
 G1 Z0.3
-; print 100mm priming line
+; print 120mm priming line
 G1 X120 E15.0 F500
-; move bed down 15mm
-G1 Z15
+; move bed down
+G1 Z15 F300
 ; zero extruder
 G92 E0
 ; set movement speed

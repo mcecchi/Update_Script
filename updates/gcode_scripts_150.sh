@@ -5,7 +5,7 @@ USER_PI="sudo -u pi"
 
 echo "Installing gcode_cmds"
 
-$USER_PI cp -a $THIS_DIR/../assets/gcode_cmds/. /home/pi/.octoprint/scripts/gcode/
+$USER_PI cp -a $THIS_DIR/../assets/gcode_scripts/. /home/pi/.octoprint/scripts/gcode/
 
 #store that the update has occured
 echo ${0##*/} >> /home/pi/.updates.txt
