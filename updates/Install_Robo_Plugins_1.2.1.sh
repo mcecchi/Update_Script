@@ -21,9 +21,6 @@ install_plugin "https://github.com/Robo3D/OctoPrint-EEPROM-Marlin/archive/0.1.5.
 #Netconnectd
 install_plugin "https://github.com/Robo3D/OctoPrint-Netconnectd/archive/0.2.zip"
 
-#Robotheme
-install_plugin "https://github.com/Robo3D/OctoPrint-robotheme/archive/0.2.3.zip"
-
 #Print History
 install_plugin "https://github.com/Robo3D/OctoPrint-PrintHistory/archive/0.92.zip"
 
