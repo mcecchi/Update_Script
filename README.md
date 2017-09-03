@@ -1,1 +1,1 @@
-This repo is for updating the SuperOcto
+This repo is for updating SuperOcto
