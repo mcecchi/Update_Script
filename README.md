@@ -1,1 +1,1 @@
-This repo is for updating the C2 Robo Printer
+This repo is for updating the ODM1 Robo Printer
